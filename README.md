@@ -42,7 +42,7 @@
   > Link de produção (a definir após o deploy na Sprint 3).
 * 🎨 **Protótipos no Figma:** [Ver wireframes](<https://www.figma.com/design/M14F6SjfmMztR2751UTDP9/Wireframe-Portf%C3%B3lio?node-id=0-1&t=8WGaRr0sx56Vhz5W-1>)
   > Wireframes de média fidelidade (desktop e mobile).
-* 📦 **Repositório:** [GitHub](<link-do-repositorio>)
+* 📦 **Repositório:** [GitHub](<https://github.com/bernardorf5/Portfolio-Profissional>)
 
 ---
 
@@ -137,8 +137,8 @@ Crie um arquivo `.env.local` na raiz do projeto (ele **não** deve ser versionad
 ### Instalação de Dependências
 
 ```bash
-git clone <URL_DO_REPOSITORIO>
-cd <pasta-do-projeto>
+git clone <https://github.com/bernardorf5/Portfolio-Profissional.git>
+cd <Portfolio-Profissional>
 npm install
 ```
 

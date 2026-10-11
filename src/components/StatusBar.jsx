@@ -1,10 +1,10 @@
-function StatusBar() {
+function StatusBar({mudarIdioma}) {
     return (
         <footer className="statusbar">
             <p>UTF-8</p>
             <p>Markdown</p>
-            <p>PT</p>
-            <p>EN</p>
+            <p onClick={() => mudarIdioma("pt")}>PT</p>
+            <p onClick={() => mudarIdioma("en")}>EN</p>
         </footer>
     )
 }

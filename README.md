@@ -121,7 +121,7 @@ Aplicação **front-end (SPA)** sem back-end próprio. A interface é dividida e
 
 ### Pré-requisitos
 
-* **Node.js:** versão LTS (v18.x ou superior)
+* **Node.js:** versão LTS (v20.19 ou superior)
 * **Gerenciador de pacotes:** npm
 
 ### Variáveis de Ambiente

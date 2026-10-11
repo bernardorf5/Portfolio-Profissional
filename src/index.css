@@ -1,0 +1,46 @@
+* { box-sizing: border-box; }
+
+html, body, #root {
+    height: 100%;
+    margin: 0;
+}
+
+/* ESTRUTURA DA PÁGINA */
+
+.app {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: 40px 40px 1fr 28px;
+    grid-template-areas:
+        "titlebar titlebar"       /*  linha 1: as duas colunas são titlebar */ 
+        "explorer tabs"          /* linha 2: coluna 1 explorer, coluna 2 tabs */
+        "explorer editor"       /* linha 3: coluna 1 explorer, coluna 2 editor */
+        "statusbar statusbar"; /* linha 4: as duas colunas são statusbar*/
+}
+
+.titlebar { 
+    grid-area: titlebar;  
+    background: #eee; 
+}
+.explorer { 
+    grid-area: explorer;  
+    background: #f5f5f5; 
+}
+.tabs { 
+    grid-area: tabs;      
+    background: #e8e8e8; 
+}
+.editor { 
+    grid-area: editor;    
+    background: #fff; 
+}
+.statusbar {
+    grid-area: statusbar;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 12px;
+    font-size: 12px;
+}

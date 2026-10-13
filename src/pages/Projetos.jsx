@@ -7,19 +7,21 @@ function Projetos({idioma}) {
     return (
         <section>
             <h1>{t.titulo}</h1>
-            {projetos.map((projeto) => (
-                <article key={projeto.id}>
-                    <h2>{projeto.nome}</h2>
-                    <p>{projeto.periodo[idioma]}</p>
-                    <p>{projeto.descricao[idioma]}</p>
-                    <ul>
-                        {projeto.tecnologias.map((tec) => (
-                            <li key={tec}>{tec}</li>
-                        ))}
-                    </ul>
-                    <a href={projeto.github} target="_blank" rel="noreferrer">{t.ver}</a>
-                </article>
-            ))}
+            <div className="timeline">
+                {projetos.map((projeto) => (
+                    <article key={projeto.id} className="projeto">
+                        <h2>{projeto.nome}</h2>
+                        <p className="periodo">{projeto.periodo[idioma]}</p>
+                        <p>{projeto.descricao[idioma]}</p>
+                        <ul className="tecnologias">
+                            {projeto.tecnologias.map((tec) => (
+                                <li key={tec}>{tec}</li>
+                            ))}
+                        </ul>
+                        <a href={projeto.github} target="_blank" rel="noreferrer" className="botao">{t.ver}</a>
+                    </article>
+                ))}
+            </div>
         </section>
     )
 }

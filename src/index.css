@@ -1,8 +1,33 @@
-* { box-sizing: border-box; }
+/* VARIÁVEIS */
 
-html, body, #root {
+:root {
+    --bg: #ffffff;
+    --bg-lateral: #f5f5f5;
+    --bg-barra: #eeeeee;
+    --borda: #dddddd;
+    --texto: #1f2328;
+    --texto-suave: #6b7280;
+    --destaque: #1e3a8a;
+    --fonte: Consolas, "Courier New", monospace;
+}
+
+/* RESET BÁSICO */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
     height: 100%;
     margin: 0;
+}
+
+body {
+    font-family: var(--fonte);
+    font-size: 14px;
+    color: var(--texto);
 }
 
 /* ESTRUTURA DA PÁGINA */
@@ -13,38 +38,340 @@ html, body, #root {
     grid-template-columns: 260px 1fr;
     grid-template-rows: 40px 40px 1fr 28px;
     grid-template-areas:
-        "titlebar titlebar"       /*  linha 1: as duas colunas são titlebar */ 
-        "explorer tabs"          /* linha 2: coluna 1 explorer, coluna 2 tabs */
-        "explorer editor"       /* linha 3: coluna 1 explorer, coluna 2 editor */
-        "statusbar statusbar"; /* linha 4: as duas colunas são statusbar*/
+        "titlebar  titlebar"
+        "explorer  tabs"
+        "explorer  editor"
+        "statusbar statusbar";
 }
 
-.titlebar { 
-    grid-area: titlebar;  
-    background: #eee; 
+/* BARRA DO TÍTULO */
+
+.titlebar {
+    grid-area: titlebar;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 12px;
+    background: var(--bg-barra);
+    border-bottom: 1px solid var(--borda);
 }
-.explorer { 
-    grid-area: explorer;  
-    background: #f5f5f5; 
+
+.titlebar img {
+    height: 22px;
 }
-.tabs { 
-    grid-area: tabs;      
-    background: #e8e8e8; 
+
+.titlebar span {
+    color: var(--texto-suave);
 }
-.editor { 
-    grid-area: editor;    
-    background: #fff; 
+
+/* EXPLORER */
+
+.explorer {
+    grid-area: explorer;
+    background: var(--bg-lateral);
+    border-right: 1px solid var(--borda);
+    padding: 8px 0;
 }
+
+.explorer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.explorer li {
+    padding: 6px 16px 6px 13px;
+    border-left: 3px solid transparent;
+    cursor: pointer;
+}
+
+.explorer li:hover {
+    background: var(--bg-barra);
+}
+
+.explorer li.ativo {
+    background: var(--borda);
+    border-left-color: var(--destaque);
+    font-weight: bold;
+}
+
+/* ABAS */
+
+.tabs {
+    grid-area: tabs;
+    display: flex;
+    align-items: stretch;
+    background: var(--bg-barra);
+    border-bottom: 1px solid var(--borda);
+}
+
+.aba {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    background: var(--bg);
+    border-top: 2px solid var(--destaque);
+}
+
+/* EDITOR */
+
+.editor {
+    grid-area: editor;
+    overflow-y: auto;
+    padding: 24px 32px;
+    background: var(--bg);
+    line-height: 1.6;
+}
+
+.editor section {
+    max-width: 800px;
+}
+
+.editor h1 {
+    margin-top: 0;
+    font-size: 28px;
+}
+
+.editor h2 {
+    margin-top: 28px;
+    font-size: 18px;
+}
+
+.editor h1::before {
+    content: "# ";
+    color: var(--destaque);
+}
+
+.editor h2::before {
+    content: "## ";
+    color: var(--destaque);
+}
+
+.editor a {
+    color: var(--destaque);
+}
+
+/* BARRA STATUS */
+
 .statusbar {
     grid-area: statusbar;
-    background: #ddd;
     display: flex;
     align-items: center;
     gap: 16px;
     padding: 0 12px;
+    background: var(--bg-barra);
+    border-top: 1px solid var(--borda);
+    color: var(--texto-suave);
     font-size: 12px;
 }
 
-.explorer li {
+.statusbar p {
+    margin: 0;
+}
+
+.statusbar p:nth-of-type(3) { /* Vai basicamente servir para empurrar o PT e o EN da barra de status */
+    margin-left: auto;
+}
+
+.idioma {
     cursor: pointer;
+}
+
+.idioma:hover {
+    color: var(--destaque);
+}
+
+/* TIMELINE DOS PROJETOS */
+.timeline {
+    margin-top: 16px;
+    border-left: 2px solid var(--borda);
+    padding-left: 24px;
+}
+
+.projeto {
+    position: relative;
+    margin-bottom: 32px;
+}
+
+.projeto::before {
+    content: "";
+    position: absolute;
+    left: -31px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--destaque);
+}
+
+.projeto h2 {
+    margin: 0;
+}
+
+.periodo {
+    margin: 4px 0;
+    color: var(--texto-suave);
+    font-size: 12px;
+}
+
+.tecnologias {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0;
+    padding: 0;
+}
+
+.tecnologias li {
+    padding: 2px 10px;
+    background: var(--bg-lateral);
+    border: 1px solid var(--borda);
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.botao {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 1px solid var(--destaque);
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.botao:hover {
+    background: var(--destaque);
+    color: #ffffff;
+}
+
+/* EXPERIÊNCIA */
+.cartao {
+    margin-top: 16px;
+    padding: 16px;
+    background: var(--bg-lateral);
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+}
+
+.cartao h2 {
+    margin-top: 0;
+}
+
+.cartao p {
+    margin: 4px 0;
+}
+
+/* CONTATO */
+.canais {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 480px;
+    padding: 0;
+}
+
+.canais a {
+    display: block;
+    padding: 10px 14px;
+    background: var(--bg-lateral);
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.canais a:hover {
+    border-color: var(--destaque);
+}
+
+.editor form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 480px;
+}
+
+.editor label {
+    font-weight: bold;
+}
+
+.editor input,
+.editor textarea {
+    padding: 8px;
+    border: 1px solid var(--borda);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.editor input:focus,
+.editor textarea:focus {
+    outline: 2px solid var(--destaque);
+}
+
+.editor button {
+    align-self: flex-start;
+    padding: 8px 16px;
+    background: var(--destaque);
+    color: #ffffff;
+    border: 0;
+    border-radius: 4px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.editor button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.erro {
+    margin: 0;
+    color: #b91c1c;
+    font-size: 13px;
+}
+
+.sucesso {
+    margin: 0;
+    color: #15803d;
+}
+
+/* RESPONSIVIDADE PARA CELULAR */
+@media (max-width: 700px) {
+    .app {
+        grid-template-columns: 1fr;
+        grid-template-rows: 40px auto 40px 1fr 28px;
+        grid-template-areas:
+            "titlebar"
+            "explorer"
+            "tabs"
+            "editor"
+            "statusbar";
+    }
+
+    .explorer {
+        padding: 0;
+        border-right: 0;
+        border-bottom: 1px solid var(--borda);
+        overflow-x: auto;
+    }
+
+    .explorer ul {
+        display: flex;
+    }
+
+    .explorer li {
+        padding: 10px 14px;
+        border-left: 0;
+        border-bottom: 3px solid transparent;
+        white-space: nowrap;
+    }
+
+    .explorer li.ativo {
+        border-bottom-color: var(--destaque);
+    }
+
+    .editor {
+        padding: 16px;
+    }
 }

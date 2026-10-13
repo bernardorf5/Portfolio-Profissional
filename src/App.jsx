@@ -12,8 +12,8 @@ function App() {
   return (
     <div className="app">
       <TitleBar />
-      <Explorer aoSelecionar={setArquivoAberto} />
-      <Tabs />
+      <Explorer aoSelecionar={setArquivoAberto} arquivoAberto={arquivoAberto} idioma={idiomaAtual} />
+      <Tabs arquivoAberto={arquivoAberto} idioma={idiomaAtual} />
       <Editor arquivoAberto={arquivoAberto} idioma={idiomaAtual}/>
       <StatusBar mudarIdioma={setIdiomaAtual}/>
     </div>

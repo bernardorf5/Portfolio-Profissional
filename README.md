@@ -14,12 +14,6 @@
 ![Vite](https://img.shields.io/badge/Vite-007ec6?style=for-the-badge&logo=vite&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-007ec6?style=for-the-badge&logo=vercel&logoColor=white)
 
-| Sprint | Entrega | Status |
-| :--- | :--- | :---: |
-| Lab01S01 | Planejamento, protótipos no Figma, navegação e layout base | 🚧 Em andamento |
-| Lab01S02 | Funcionalidades principais (Sobre mim PT/EN, timeline, experiências, contato) | ⏳ Planejado |
-| Lab01S03 | Deploy, ajustes visuais, GIFs dos projetos e README final | ⏳ Planejado |
-
 ---
 
 ## 📚 Índice
@@ -38,8 +32,7 @@
 ---
 
 ## 🔗 Links Úteis
-* 🌐 **Site publicado:** [Acesse o portfólio](<link-do-site-publicado>)
-  > Link de produção (a definir após o deploy na Sprint 3).
+* 🌐 **Site publicado:** [Acesse o portfólio](<https://portfolio-profissional-five-sigma.vercel.app/>)
 * 🎨 **Protótipos no Figma:** [Ver wireframes](<https://www.figma.com/design/M14F6SjfmMztR2751UTDP9/Wireframe-Portf%C3%B3lio?node-id=0-1&t=8WGaRr0sx56Vhz5W-1>)
   > Wireframes de média fidelidade (desktop e mobile).
 * 📦 **Repositório:** [GitHub](<https://github.com/bernardorf5/Portfolio-Profissional>)
@@ -56,13 +49,13 @@ O objetivo é apresentar minha trajetória, habilidades, projetos e formas de co
 
 ## ✨ Funcionalidades Principais
 
-- [ ] 📁 **Navegação estilo editor:** explorador de arquivos lateral, abas e breadcrumb.
-- [ ] 🌐 **Sobre mim em português e inglês:** alternância de idioma (PT/EN) pela barra de status.
-- [ ] 🕒 **Timeline de projetos estilo `git log`:** do mais antigo ao mais recente, com nome, descrição, tecnologias, link do GitHub e imagem/GIF em cada projeto.
-- [ ] 💼 **Experiências:** empresa/instituição, cargo ou atividade, período e breve descrição.
-- [ ] ✉️ **Contato:** ícones clicáveis (e-mail, WhatsApp, LinkedIn) e formulário com nome, e-mail e mensagem, com envio por e-mail e validações básicas.
-- [ ] 🖥️ **Terminal integrado:** painel que abre e fecha por botão (comandos a definir).
-- [ ] 📱 **Design responsivo:** layout adaptado para desktop e celular.
+📁 **Navegação estilo editor:** explorador de arquivos lateral, abas e breadcrumb.
+🌐 **Sobre mim em português e inglês:** alternância de idioma (PT/EN) pela barra de status.
+🕒 **Timeline de projetos estilo `git log`:** do mais antigo ao mais recente, com nome, descrição, tecnologias, link do GitHub e imagem em cada projeto.
+💼 **Experiências:** empresa/instituição, cargo ou atividade, período e breve descrição.
+✉️ **Contato:** ícones clicáveis (e-mail, WhatsApp, LinkedIn) e formulário com nome, e-mail e mensagem, com envio por e-mail e validações básicas.
+🖥️ **Terminal integrado:** painel que abre e fecha por botão (comandos a definir).
+📱 **Design responsivo:** layout adaptado para desktop e celular.
 
 ---
 

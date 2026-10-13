@@ -17,6 +17,25 @@ export const textos = {
         experiencias: {
             titulo: "Experiências"
         },
+        contato: {
+            titulo: "Contato", 
+            intro: "Vamos conversar? Escolha um canal ou envie uma mensagem.", 
+            canais: "Canais de contato",
+            formTitulo: "Enviar mensagem",
+            nome: "Nome",
+            email: "E-mail",
+            mensagem: "Mensagem",
+            placeholderNome: "Seu nome",
+            placeholderEmail: "Seu e-mail",
+            placeholderMensagem: "Escreva sua mensagem...",
+            enviar: "Enviar mensagem",
+            enviando: "Enviando...",
+            erroNome: "Informe seu nome.",
+            erroEmail: "Informe um e-mail válido.",
+            erroMensagem: "Escreva uma mensagem.",
+            sucesso: "Mensagem enviada!",
+            falha: "Não foi possível enviar. Tente novamente.",
+        },
     },
     en: {
         sobre: {
@@ -35,6 +54,25 @@ export const textos = {
         },
         experiencias: {
             titulo: "Experiences"
+        },
+        contato: {
+            titulo: "Contact",
+            intro: "Let's talk! Pick a channel or send a message.",
+            canais: "Contact channels",
+            formTitulo: "Send a message",
+            nome: "Name",
+            email: "Email",
+            mensagem: "Message",
+            placeholderNome: "Your name",
+            placeholderEmail: "Your email",
+            placeholderMensagem: "Write your message...",
+            enviar: "Send message",
+            enviando: "Sending...",
+            erroNome: "Please enter your name.",
+            erroEmail: "Please enter a valid email.",
+            erroMensagem: "Please write a message.",
+            sucesso: "Message sent!",
+            falha: "Could not send. Please try again.",
         },
     },
 }

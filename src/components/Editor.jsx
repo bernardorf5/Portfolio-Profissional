@@ -9,7 +9,7 @@ function Editor ({arquivoAberto, idioma}) {
             {arquivoAberto === "sobre" && <SobreMim idioma={idioma} />}
             {arquivoAberto === "exp" && <Experiencia idioma={idioma}/>}
             {arquivoAberto === "projetos" && <Projetos idioma={idioma}/>}
-            {arquivoAberto === "contato" && <Contato />}
+            {arquivoAberto === "contato" && <Contato idioma={idioma}/>}
         </main>
     )
 }

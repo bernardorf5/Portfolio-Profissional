@@ -5,7 +5,10 @@ function Tabs({ arquivoAberto, idioma }) {
 
     return (
         <nav className="tabs">
-            <span className="aba">{atual.nome[idioma]}</span>
+            <span className="aba">
+                {atual.nome[idioma]}
+                <span className="fechar" aria-hidden="true">×</span>
+            </span>
         </nav>
     )
 }

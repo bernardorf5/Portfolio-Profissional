@@ -1,7 +1,7 @@
 # 💻 Portfólio
 
 > [!NOTE]
-> Portfólio profissional em formato de **editor de código**: cada seção do site é um arquivo, os projetos aparecem como commits de um `git log` e um terminal integrado permite explorar o conteúdo.
+> Portfólio profissional em formato de **editor de código**: cada seção do site é um arquivo e os projetos aparecem como commits de um `git log`.
 
 <p align="center"><img src="docs/logo.svg" alt="Logo BF" width="200"></p>
 
@@ -32,10 +32,10 @@
 ---
 
 ## 🔗 Links Úteis
-* 🌐 **Site publicado:** [Acesse o portfólio](<https://portfolio-profissional-five-sigma.vercel.app/>)
-* 🎨 **Protótipos no Figma:** [Ver wireframes](<https://www.figma.com/design/M14F6SjfmMztR2751UTDP9/Wireframe-Portf%C3%B3lio?node-id=0-1&t=8WGaRr0sx56Vhz5W-1>)
+* 🌐 **Site publicado:** [Acesse o portfólio](https://portfolio-profissional-five-sigma.vercel.app/)
+* 🎨 **Protótipos no Figma:** [Ver wireframes](https://www.figma.com/design/M14F6SjfmMztR2751UTDP9/Wireframe-Portf%C3%B3lio?node-id=0-1&t=8WGaRr0sx56Vhz5W-1)
   > Wireframes de média fidelidade (desktop e mobile).
-* 📦 **Repositório:** [GitHub](<https://github.com/bernardorf5/Portfolio-Profissional>)
+* 📦 **Repositório:** [GitHub](https://github.com/bernardorf5/Portfolio-Profissional)
 
 ---
 
@@ -43,25 +43,24 @@
 
 Este projeto é o meu **portfólio profissional**, desenvolvido no Laboratório 01 da disciplina de Desenvolvimento e Integração de Aplicações Web (DIAW), do curso de Engenharia de Software da PUC Minas.
 
-O objetivo é apresentar minha trajetória, habilidades, projetos e formas de contato de maneira moderna e acessível. Em vez de uma página tradicional, o site simula um **editor de código**: o visitante navega por arquivos (`Sobre mim`, `Projetos`, `Experiência` e `Contato`), abre abas, acompanha a timeline de projetos como se fosse um histórico de commits e pode usar um terminal para explorar o conteúdo.
+O objetivo é apresentar minha trajetória, habilidades, projetos e formas de contato de maneira moderna e acessível. Em vez de uma página tradicional, o site simula um **editor de código**: o visitante navega por arquivos (`Sobremim.md`, `Projetos.md`, `Experiencia.md` e `Contato.md`) e acompanha a timeline de projetos como se fosse um histórico de commits.
 
 ---
 
 ## ✨ Funcionalidades Principais
 
-📁 **Navegação estilo editor:** explorador de arquivos lateral, abas e breadcrumb.
-🌐 **Sobre mim em português e inglês:** alternância de idioma (PT/EN) pela barra de status.
+📁 **Navegação estilo editor:** explorador de arquivos lateral, aba do arquivo aberto, breadcrumb e barra de status (linha/coluna, espaços, codificação e tipo de arquivo).
+🌐 **Português e inglês:** alternância de idioma (PT/EN) pela barra de status, com o idioma ativo destacado. Os textos e também os nomes dos arquivos são traduzidos (`Sobremim.md` vira `Aboutme.md`).
 🕒 **Timeline de projetos estilo `git log`:** do mais antigo ao mais recente, com nome, descrição, tecnologias, link do GitHub e imagem em cada projeto.
 💼 **Experiências:** empresa/instituição, cargo ou atividade, período e breve descrição.
-✉️ **Contato:** ícones clicáveis (e-mail, WhatsApp, LinkedIn) e formulário com nome, e-mail e mensagem, com envio por e-mail e validações básicas.
-🖥️ **Terminal integrado:** painel que abre e fecha por botão (comandos a definir).
+✉️ **Contato:** botões clicáveis (e-mail, WhatsApp, LinkedIn) e formulário com nome, e-mail e mensagem, com envio por e-mail e validações básicas.
 📱 **Design responsivo:** layout adaptado para desktop e celular.
 
 ---
 
 ## 🛠 Tecnologias Utilizadas
 
-Tecnologias **previstas** para esta etapa. As versões exatas ficam registradas no `package.json`.
+As versões exatas ficam registradas no `package.json`.
 
 ### 💻 Front-end
 
@@ -85,28 +84,25 @@ Tecnologias **previstas** para esta etapa. As versões exatas ficam registradas 
 | `vite` | Servidor de desenvolvimento e build |
 | `@emailjs/browser` | Envio do formulário de contato por e-mail |
 
-> [!NOTE]
-> Esta tabela será atualizada conforme novas bibliotecas forem adicionadas ao projeto.
-
 ---
 
 ## 🏗 Arquitetura
 
 Aplicação **front-end (SPA)** sem back-end próprio. A interface é dividida em componentes que imitam as partes de um editor de código.
 
-**Principais componentes (previstos):**
+**Principais componentes:**
 
-- **Titlebar:** barra superior com o título do site.
+- **Titlebar:** barra superior com a logo e o título do site.
 - **Explorer:** lista de arquivos (as seções do portfólio).
-- **Tabs:** abas dos arquivos abertos.
-- **Editor:** área central que exibe o conteúdo do arquivo selecionado.
-- **StatusBar:** barra inferior com o seletor de idioma (PT/EN).
-- **Terminal:** painel inferior que abre e fecha.
+- **Tabs:** aba do arquivo aberto.
+- **Editor:** área central que exibe o breadcrumb e o conteúdo do arquivo selecionado.
+- **StatusBar:** barra inferior com as informações do arquivo e o seletor de idioma (PT/EN).
 
 **Decisões de projeto:**
 
-- Os dados (projetos, experiências e textos em PT/EN) ficam em arquivos separados do código dos componentes. Assim, a timeline e o terminal leem a mesma lista de projetos e um projeto novo aparece nos dois lugares.
-- O estado da interface (arquivo aberto, idioma, terminal aberto ou fechado) é controlado pelo React.
+- Os dados (arquivos, projetos, experiências e textos em PT/EN) ficam em arquivos separados do código dos componentes. Cada texto traduzido é um objeto com as chaves `pt` e `en`, então o componente só escolhe `texto[idioma]`. Para adicionar um projeto novo, basta incluir um item na lista.
+- O estado da interface (arquivo aberto e idioma) é controlado pelo React no `App.jsx` e repassado aos componentes por props.
+- As imagens dos projetos ficam em `public/projetos/` e são acessadas pelo caminho `/projetos/arquivo.png`.
 
 ---
 
@@ -130,8 +126,8 @@ Crie um arquivo `.env.local` na raiz do projeto (ele **não** deve ser versionad
 ### Instalação de Dependências
 
 ```bash
-git clone <https://github.com/bernardorf5/Portfolio-Profissional.git>
-cd <Portfolio-Profissional>
+git clone https://github.com/bernardorf5/Portfolio-Profissional.git
+cd Portfolio-Profissional
 npm install
 ```
 
@@ -154,51 +150,76 @@ npm run preview   # simula a produção localmente
 
 ## 🚀 Deploy
 
-O site é publicado gratuitamente na **Vercel**.
+O site é publicado gratuitamente na **Vercel**, com atualização automática a cada push na branch principal.
 
 1. Envie o projeto para o GitHub.
 2. Na Vercel, importe o repositório (**Add New > Project**).
 3. Confirme o preset **Vite** (comando de build `npm run build`, pasta de saída `dist`).
 4. Cadastre as variáveis `VITE_EMAILJS_*` em **Settings > Environment Variables**.
-5. Clique em **Deploy** e copie o link gerado para a seção [Links Úteis](#-links-úteis).
+5. Clique em **Deploy**. O link gerado está na seção [Links Úteis](#-links-úteis).
 
 ---
 
 ## 📂 Estrutura de Pastas
-
-Estrutura **prevista** (pode mudar durante o desenvolvimento).
 
 ```
 .
 ├── README.md                # 📘 Documentação principal
 ├── .gitignore               # 🧹 Arquivos ignorados pelo Git (node_modules, .env.local, dist)
 ├── .env.example             # 🧩 Exemplo das variáveis de ambiente (sem valores reais)
-├── index.html               # 📄 Página base
+├── index.html               # 📄 Página base (título e ícone da aba)
 ├── package.json             # 📦 Dependências e scripts
 ├── vite.config.js           # ⚙️ Configuração do Vite
 │
-├── /public                  # 📂 Arquivos estáticos
+├── /public
+│   └── /projetos            # 🖼️ Imagens e GIFs da timeline de projetos
 ├── /docs
-│   └── /prototipos          # 🎨 Imagens dos wireframes usadas neste README
+│   ├── logo.svg             # 🔷 Logo usada neste README
+│   ├── /prototipos          # 🎨 Imagens dos wireframes
+│   └── /site                # 📸 Prints do site publicado
+│       ├── /desktop         #    Versão desktop (PT e EN)
+│       └── /mobile          #    Versão mobile (PT e EN)
 │
 └── /src
     ├── main.jsx             # 🚪 Ponto de entrada da aplicação
-    ├── App.jsx              # 🧱 Layout principal
-    ├── /components          # 🧱 Titlebar, Explorer, Tabs, Editor, StatusBar, Terminal
+    ├── App.jsx              # 🧱 Layout principal e estado (arquivo aberto e idioma)
+    ├── index.css            # 🎨 Estilos globais
+    ├── /assets              # 🖼️ Logo utilizada no código
+    ├── /components          # 🧱 Titlebar, Explorer, Tabs, Editor, StatusBar
     ├── /pages               # 📄 Conteúdo de cada arquivo: Sobre mim, Projetos, Experiência, Contato
-    ├── /data                # 🗂️ Projetos e experiências
-    ├── /i18n                # 🌐 Textos em português e inglês
-    ├── /styles              # 🎨 Estilos globais
-    └── /assets              # 🖼️ Imagens e GIFs dos projetos
+    ├── /data                # 🗂️ Arquivos do explorador, projetos e experiências
+    └── /i18n                # 🌐 Textos em português e inglês
 ```
 
 ---
 
 ## 🎥 Demonstração
 
+### 🌐 Site em funcionamento
+
+| Português (PT) | Inglês (EN) |
+| :---: | :---: |
+| <img src="docs/site/desktop/sobre-mim-pt.png" alt="Site em português: Sobre mim" width="400"> | <img src="docs/site/desktop/about-me-en.png" alt="Site em inglês: About me" width="400"> |
+| **Projetos** | **Projects** |
+| <img src="docs/site/desktop/projetos-pt.png" alt="Site em português: Projetos" width="400"> | <img src="docs/site/desktop/projects-en.png" alt="Site em inglês: Projects" width="400"> |
+| **Experiência** | **Experience** |
+| <img src="docs/site/desktop/experiencia-pt.png" alt="Site em português: Experiência" width="400"> | <img src="docs/site/desktop/experience-en.png" alt="Site em inglês: Experience" width="400"> |
+| **Contato** | **Contact** |
+| <img src="docs/site/desktop/contato-pt.png" alt="Site em português: Contato" width="400"> | <img src="docs/site/desktop/contact-en.png" alt="Site em inglês: Contact" width="400"> |
+
+#### 📱 Versão mobile
+
+No celular, o explorador de arquivos vira uma barra de abas rolável na horizontal, acima do arquivo aberto.
+
+| Sobre mim | Projetos | Experiência | Contato |
+| :---: | :---: | :---: | :---: |
+| <img src="docs/site/mobile/mobile-sobre-mim-pt.png" alt="Mobile em português: Sobre mim" height="400"> | <img src="docs/site/mobile/mobile-projetos-pt.png" alt="Mobile em português: Projetos" height="400"> | <img src="docs/site/mobile/mobile-experiencia-pt.png" alt="Mobile em português: Experiência" height="400"> | <img src="docs/site/mobile/mobile-contato-pt.png" alt="Mobile em português: Contato" height="400"> |
+| **About me** | **Projects** | **Experience** | **Contact** |
+| <img src="docs/site/mobile/mobile-about-me-en.png" alt="Mobile em inglês: About me" height="400"> | <img src="docs/site/mobile/mobile-projects-en.png" alt="Mobile em inglês: Projects" height="400"> | <img src="docs/site/mobile/mobile-experience-en.png" alt="Mobile em inglês: Experience" height="400"> | <img src="docs/site/mobile/mobile-contact-en.png" alt="Mobile em inglês: Contact" height="400"> |
+
 ### 🎨 Protótipos (Sprint 1)
 
-Wireframes de média fidelidade feitos no Figma.
+Wireframes de média fidelidade feitos no Figma. O protótipo previa um terminal integrado, que ficou fora da versão final para priorizar as seções obrigatórias.
 
 #### 💻 Desktop
 
@@ -213,10 +234,6 @@ Wireframes de média fidelidade feitos no Figma.
 | Sobre mim | Projetos | Contato | Terminal aberto |
 | :---: | :---: | :---: | :---: |
 | <img src="docs/prototipos/mobile-sobre-mim.png" alt="Wireframe mobile: Sobre mim" height="400"> | <img src="docs/prototipos/mobile-projetos.png" alt="Wireframe mobile: Projetos" height="400"> | <img src="docs/prototipos/mobile-contato.png" alt="Wireframe mobile: Contato" height="400"> | <img src="docs/prototipos/mobile-terminal.png" alt="Wireframe mobile: Terminal" height="400"> |
-
-### 🌐 Site em funcionamento (Sprint 3)
-
-_Prints e GIFs do site publicado serão adicionados aqui._
 
 ---
 
@@ -234,6 +251,6 @@ _Prints e GIFs do site publicado serão adicionados aqui._
 
 | 👤 Nome | :octocat: GitHub | 💼 LinkedIn | 📤 E-mail |
 |---------|------------------|-------------|-----------|
-| Bernardo Ramos Ferreira | [GitHub](<https://github.com/bernardorf5>) | [LinkedIn](<https://www.linkedin.com/in/bernardoramosferreira>) | [E-mail](mailto:bernardoramosf22@gmail.com) |
+| Bernardo Ramos Ferreira | [GitHub](https://github.com/bernardorf5) | [LinkedIn](https://www.linkedin.com/in/bernardoramosferreira) | [E-mail](mailto:bernardoramosf22@gmail.com) |
 
 ---

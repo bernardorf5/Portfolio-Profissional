@@ -9,6 +9,7 @@ export const projetos = [
         },
         tecnologias: ["Python", "Pygame"],
         github: "https://github.com/bernardorf5/BlackJack-PUC",
+        imagem: "/projetos/blackjack.png",
     },
     {
         id: "clima",
@@ -20,5 +21,6 @@ export const projetos = [
         },
         tecnologias: ["Java", "Spring Boot"],
         github: "https://github.com/chicortes/DIAW-At01",
+        imagem: "/projetos/clima.png",
     },
 ]

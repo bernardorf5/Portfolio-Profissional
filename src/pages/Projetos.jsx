@@ -13,6 +13,7 @@ function Projetos({idioma}) {
                         <h2>{projeto.nome}</h2>
                         <p className="periodo">{projeto.periodo[idioma]}</p>
                         <p>{projeto.descricao[idioma]}</p>
+                        {projeto.imagem && <img src={projeto.imagem} alt={projeto.nome} />}
                         <ul className="tecnologias">
                             {projeto.tecnologias.map((tec) => (
                                 <li key={tec}>{tec}</li>

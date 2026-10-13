@@ -36,6 +36,12 @@ export const textos = {
             sucesso: "Mensagem enviada!",
             falha: "Não foi possível enviar. Tente novamente.",
         },
+        ui: {
+            explorador: "EXPLORADOR",
+            pasta: "PORTFÓLIO",
+            raiz: "portfólio",
+            espacos: "Espaços: 2"
+        },
     },
     en: {
         sobre: {
@@ -73,6 +79,12 @@ export const textos = {
             erroMensagem: "Please write a message.",
             sucesso: "Message sent!",
             falha: "Could not send. Please try again.",
+        },
+        ui: {
+            explorador: "EXPLORER",
+            pasta: "PORTFOLIO",
+            raiz: "portfolio",
+            espacos: "Spaces: 2"
         },
     },
 }

@@ -60,10 +60,6 @@ body {
     height: 22px;
 }
 
-.titlebar span {
-    color: var(--texto-suave);
-}
-
 /* EXPLORER */
 
 .explorer {
@@ -169,23 +165,20 @@ body {
     margin: 0;
 }
 
-.statusbar p:nth-of-type(3) { /* Vai basicamente servir para empurrar o PT e o EN da barra de status */
-    margin-left: auto;
-}
-
-.idioma {
-    cursor: pointer;
-}
-
-.idioma:hover {
-    color: var(--destaque);
-}
-
 /* TIMELINE DOS PROJETOS */
+
 .timeline {
     margin-top: 16px;
     border-left: 2px solid var(--borda);
     padding-left: 24px;
+}
+
+.projeto img {
+    display: block;
+    max-width: 100%;
+    margin: 12px 0;
+    border: 1px solid var(--borda);
+    border-radius: 6px;
 }
 
 .projeto {
@@ -336,6 +329,70 @@ body {
     color: #15803d;
 }
 
+/* ---------- Detalhes de editor ---------- */
+.titlebar span {
+    min-width: 0;
+    padding: 4px 16px;
+    background: var(--bg);
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    color: var(--texto-suave);
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.explorer-titulo {
+    margin: 0;
+    padding: 8px 16px;
+    color: var(--texto-suave);
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.pasta {
+    margin: 0;
+    padding: 4px 16px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.breadcrumb {
+    margin: 0 0 20px;
+    color: var(--texto-suave);
+    font-size: 12px;
+}
+
+.fechar {
+    margin-left: 14px;
+    color: var(--texto-suave);
+}
+
+.idiomas {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.idioma {
+    padding: 2px 8px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.idioma:hover {
+    background: var(--borda);
+    color: var(--texto);
+}
+
+.idioma.ativo {
+    border-color: var(--destaque);
+    color: var(--destaque);
+    font-weight: bold;
+}
+
 /* RESPONSIVIDADE PARA CELULAR */
 @media (max-width: 700px) {
     .app {
@@ -360,8 +417,12 @@ body {
         display: flex;
     }
 
+    .explorer-titulo, .pasta{
+        display: none;
+    }
+
     .explorer li {
-        padding: 10px 14px;
+        padding: 6px 16px 6px 13px;
         border-left: 0;
         border-bottom: 3px solid transparent;
         white-space: nowrap;

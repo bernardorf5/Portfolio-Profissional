@@ -1,6 +1,7 @@
 import { textos } from '../i18n/textos'
 import { contatos } from '../data/contatos'
 import FormularioContato from '../components/FormularioContato'
+import Icone from '../components/Icone'
 
 function Contato({ idioma }) {
     const t = textos[idioma].contato
@@ -14,7 +15,8 @@ function Contato({ idioma }) {
                 {contatos.map((contato) => (
                     <li key={contato.id}>
                         <a href={contato.link} target={contato.externo ? "_blank" : undefined} rel={contato.externo ? "noreferrer" : undefined}>
-                            {contato.nome} {contato.detalhe}
+                            <Icone nome={contato.id} />
+                            <span>{contato.nome} {contato.detalhe}</span>
                         </a>
                     </li>
                 ))}

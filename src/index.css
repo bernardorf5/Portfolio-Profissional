@@ -265,7 +265,9 @@ body {
 }
 
 .canais a {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     padding: 10px 14px;
     background: var(--bg-lateral);
     border: 1px solid var(--borda);
@@ -275,6 +277,13 @@ body {
 
 .canais a:hover {
     border-color: var(--destaque);
+}
+
+.canais .icone {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: var(--destaque);
 }
 
 .editor form {
